@@ -19,22 +19,32 @@ namespace LinkedList
             linkedList.Add("Sam");
 
             // выводим элементы
-            foreach (var item in linkedList)
-            {
-                Console.WriteLine(item);
-            }
+            PrintList(linkedList);
             // удаляем элемент
+            Console.WriteLine("Remove Alice");
             linkedList.Remove("Alice");
-            foreach (var item in linkedList)
-            {
-                Console.WriteLine(item);
-            }
+            PrintList(linkedList);
             // проверяем наличие элемента
+
+            Console.WriteLine("Check Sum");
             bool isPresent = linkedList.Contains("Sam");
             Console.WriteLine(isPresent == true ? "Sam присутствует" : "Sam отсутствует");
 
-            // добавляем элемент в начало            
+            // добавляем элемент в начало 
+
+            Console.WriteLine("Add to start Bill");
             linkedList.AppendFirst("Bill");
+            PrintList(linkedList);
+            Console.ReadKey();
+        }
+
+        private static void PrintList(MyList<string> myList)
+        {
+            foreach (var item in myList)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine(string.Empty);
         }
     }
 }
